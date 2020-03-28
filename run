@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+$birthDate = "12.02.1989";
+$todayDate = date("Y-m-d");
+
+$birthTime = strtotime($birthDate);
+$todayTime = strtotime($todayDate);
+
+$totalTime = $todayTime - $birthTime;
+$totalDays = $totalTime / (60 * 60 * 24);
+echo $totalDays;
