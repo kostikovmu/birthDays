@@ -1,7 +1,9 @@
 #!/usr/bin/env php
 <?php
+$options = getopt("f:");
+$birthDate = $options['f'] ?? '12.02.1989';
 
-$birthDate = "12.02.1989";
+//$birthDate = "12.02.1989";
 $todayDate = date("Y-m-d");
 
 $birthTime = strtotime($birthDate);
@@ -9,4 +11,5 @@ $todayTime = strtotime($todayDate);
 
 $totalTime = $todayTime - $birthTime;
 $totalDays = $totalTime / (60 * 60 * 24);
-echo $totalDays;
+echo "$birthDate - $totalDays\n";
+
